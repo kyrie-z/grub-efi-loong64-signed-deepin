@@ -1,4 +1,10 @@
-grub-efi-loong64-signed (1+2.12+7deepin8) unstable; urgency=medium
+grub-efi-loong64-signed (1.1+2.12-7deepin8) unstable; urgency=medium
+
+  * postinst添加对/boot/efi/EFI/BOOT/BOOTLOONGARCH64.EFI的更新
+
+ -- zhouzilong <zhouzilong@uniontech.com>  Wed, 14 Jan 2026 11:32:33 +0800
+
+grub-efi-loong64-signed (1+2.12-7deepin8) unstable; urgency=medium
 
   * init
 

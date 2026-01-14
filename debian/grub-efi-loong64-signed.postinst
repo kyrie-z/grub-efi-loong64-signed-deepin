@@ -21,6 +21,9 @@ case $1 in
        	if [ -n "$bootloader_id" ]; then
             grub-install --bootloader-id=$bootloader_id
         fi
+        # loongarch64 生效的EFI路径为：/boot/efi/EFI/BOOT/BOOTLOONGARCH64.EFI， 通过grub-install --removable更新它
+        grub-install --removable
+        cp /boot/efi/EFI/BOOT/BOOTLOONGARCH64.EFI /boot/efi/EFI/BOOT/BOOTLOONGARCH.EFI -rf || true
         ;;
 esac
 
