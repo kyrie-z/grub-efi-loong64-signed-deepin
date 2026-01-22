@@ -2,8 +2,7 @@ Source: grub-efi-loong64-signed
 Section: admin
 Priority: optional
 Maintainer: zhouzilong <zhouzilong@uniontech.com>
-Build-Depends: debhelper (>= 11),
- sbsigntool [loong64 arm64 i386],
+Build-Depends: debhelper (>= 11)
 
 Package: grub-efi-loong64-signed
 Architecture: loong64

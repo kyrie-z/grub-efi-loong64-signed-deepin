@@ -1,20 +1,21 @@
 #!/usr/bin/make -f
 
-SIG_DIR := debian/signatures/grub-efi-loong64-bin
-
 %:
 	dh $@
 
 override_dh_auto_install:
 	set -e ; \
-	find "$(SIG_DIR)" -name '*.efi.signed' -printf '%P\n' | \
-	while read sig; do \
-		dst="debian/tmp/$${sig%/monolithic/*}-signed/" ; \
-		echo "$$dst" ; \
-		echo "$${sig%}" ; \
-		install -m 0755 -d "$${dst%/*}" ; \
-		install -m 0644 "debian/signatures/grub-efi-loong64-bin/$${sig%}" "$$dst" ; \
-	done
+	target_distro="uos"; \
+	os_name=$$(grep -oP '^NAME="\K[^"]+' /etc/os-release 2>/dev/null); \
+	if [ "$$os_name" = "Deepin" ]; then \
+		target_distro="deepin"; \
+	fi; \
+	sig_path="usr/lib/grub/loongarch64-efi/monolithic/$$target_distro/grubloongarch64.efi.signed"; \
+	dst="debian/tmp/usr/lib/grub/loongarch64-efi-signed/"; \
+	echo "Installing from: $$sig_path"; \
+	echo "To destination: $$dst"; \
+	install -m 0755 -d "$$dst"; \
+	install -m 0644 "debian/signatures/grub-efi-loong64-bin/$$sig_path" "$${dst}grubloongarch64.efi.signed"
 
 override_dh_install:
 	dh_install --sourcedir=debian/tmp .

@@ -1,1 +1,2 @@
-debian/signatures/grub-efi-loong64-bin/usr/lib/grub/loongarch64-efi/monolithic/grubloongarch64.efi.signed
+debian/signatures/grub-efi-loong64-bin/usr/lib/grub/loongarch64-efi/monolithic/deepin/grubloongarch64.efi.signed
+debian/signatures/grub-efi-loong64-bin/usr/lib/grub/loongarch64-efi/monolithic/uos/grubloongarch64.efi.signed

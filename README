@@ -17,8 +17,11 @@ grub.uos,1,Uos,grub2,2.12-7deepin8,https://github.com/deepin-community/grub2
 
 2.2. make grubloongarch64.efi:
 
+for uos:
 grub-mkimage -o LOONGARCH64.EFI -O loongarch64-efi -d /usr/lib/grub/loongarch64-efi/ -p '/EFI/UOS' ext2 part_gpt newc blocklist iso9660 udf memdisk cpio minicmd part_msdos msdospart fat ntfs exfat loopback gfxterm reboot normal romfs procfs sleep ls cat echo search configfile halt chain test probe linux scsi gfxmenu gfxterm_background deepin_gfxmode jpeg elf part_apple extcmd xfs part_bsd search_fs_file btrfs loadenv lvm minix minix2 reiserfs png gzio all_video efifwsetup password_pbkdf2 search_fs_uuid boot progress hfs hfsplus tar ufs1 ufs2 zfs help font terminal zstd zfsinfo xzio --sbat grub.sbat
 
+for deepin:
+grub-mkimage -o LOONGARCH64.EFI -O loongarch64-efi -d /usr/lib/grub/loongarch64-efi/ -p '/EFI/DEEPIN' ext2 part_gpt newc blocklist iso9660 udf memdisk cpio minicmd part_msdos msdospart fat ntfs exfat loopback gfxterm reboot normal romfs procfs sleep ls cat echo search configfile halt chain test probe linux scsi gfxmenu gfxterm_background deepin_gfxmode jpeg elf part_apple extcmd xfs part_bsd search_fs_file btrfs loadenv lvm minix minix2 reiserfs png gzio all_video efifwsetup password_pbkdf2 search_fs_uuid boot progress hfs hfsplus tar ufs1 ufs2 zfs help font terminal zstd zfsinfo xzio --sbat grub.sbat
 3. sign efi:
 
    use uos secureboot cert UniontechUEFIDB-RSA.crt and UniontechUEFIbl-RSA-2024.crt

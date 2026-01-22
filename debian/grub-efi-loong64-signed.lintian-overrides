@@ -1,0 +1,2 @@
+grub-efi-loong64-signed: portable-executable-missing-security-features usr/lib/grub/loongarch64-efi/monolithic/deepin/grubloongarch64.efi.signed
+grub-efi-loong64-signed: portable-executable-missing-security-features usr/lib/grub/loongarch64-efi/monolithic/uos/*
